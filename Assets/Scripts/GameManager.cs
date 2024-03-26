@@ -19,11 +19,11 @@ public class GameManager : MonoBehaviour
     }
     void SpawnWall()
     {
-        float unitsBetweenWalls = Random.Range(9f, 10.5f);
-        float bottomWallPos = Random.Range(-7f, -2.5f);
+        float unitsBetweenWalls = Random.Range(6f, 7f);
+        float bottomWallPos = Random.Range(-5.5f, -0.5f);
         float topWallPos = bottomWallPos + unitsBetweenWalls;
         Instantiate(wallPrefab, new Vector2(10, bottomWallPos), wallPrefab.transform.rotation);
-        Instantiate(wallPrefab, new Vector2(10, topWallPos), wallPrefab.transform.rotation);
+        Instantiate(wallPrefab, new Vector2(10, topWallPos), Quaternion.Euler(wallPrefab.transform.rotation.x, wallPrefab.transform.rotation.y, wallPrefab.transform.rotation.z + 180));
         StartCoroutine("SpawnAfterSecs");
     }
     public void GameOver()

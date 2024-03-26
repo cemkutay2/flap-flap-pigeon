@@ -16,6 +16,6 @@ public class MoveWallLeft : MonoBehaviour
     void Update()
     {
         if (gameManager.isGameActive)
-            transform.Translate(Vector2.left * speed * Time.deltaTime);
+            transform.position += Vector3.left * speed * Time.deltaTime;
     }
 }
