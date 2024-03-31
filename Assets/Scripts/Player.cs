@@ -29,6 +29,13 @@ public class Player : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        gameManager.GameOver();
+        if (other.gameObject.CompareTag("Trigger"))
+        {
+            gameManager.AddScore();
+        }
+        else
+        {
+            gameManager.GameOver();
+        }
     }
 }
